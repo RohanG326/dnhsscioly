@@ -8,24 +8,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity // Annotation to simplify creating an entity, which is a lightweight persistence domain object. Typically, an entity represents a table in a relational database, and each entity instance corresponds to a row in that table.
+@Entity // Annotation to simplify creating an entity, which is a lightweight persistence
+        // domain object. Typically, an entity represents a table in a relational
+        // database, and each entity instance corresponds to a row in that table.
 public class Roster {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(unique=true)
+    @Column(unique = true)
     private String name;
 
     private ArrayList<String> category;
     private int grade;
 
+    private String email;
+    private String phoneNumber;
+
     // delombok: class definition
-    public Roster(Long id, String name, ArrayList<String> category, int grade) {
+    public Roster(Long id, String name, ArrayList<String> category, int grade, String email, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.grade = grade;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     // no args
@@ -36,26 +43,49 @@ public class Roster {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public ArrayList<String> getCategory() {
         return category;
     }
+
     public void setCategory(ArrayList<String> category) {
         this.category = category;
     }
+
     public int getGrade() {
         return grade;
     }
+
     public void setGrade(int grade) {
         this.grade = grade;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     // data: tostring

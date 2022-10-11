@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.w3.org/1999/xhtml"
+  layout:decorate="~{layouts/base}"
+  lang="en"
+>
+  <head>
+    <title>Greet</title>
+  </head>
+
+  <body>
+    <th:block layout:fragment="body" th:remove="tag">
+      <!-- Start of body content specific to page -->
+      <div class="px-4 py-5 my-5">
+        <h3 class="display-5 fw-bold">Roster Table</h3>
+        <table>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>grade</th>
+            <th>email</th>
+            <th>phone number</th>
+          </tr>
+          <tr th:if="${roster.empty}">
+            <td colspan="2">No Members :(</td>
+          </tr>
+          <tr th:each="member : ${roster}">
+            <td><span th:text="${member.id}"></span></td>
+            <td><span th:text="${member.name}"></span></td>
+            <td><span th:text="${member.grade}"></span></td>
+            <td><span th:text="${member.email}"></span></td>
+            <td><span th:text="${member.phoneNumber}"></span></td>
+          </tr>
+        </table>
+      </div>
+      <!-- End of body content specific to page -->
+    </th:block>
+  </body>
+</html>
