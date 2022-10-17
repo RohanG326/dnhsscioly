@@ -23,6 +23,12 @@
     </properties>
 
     <dependencies>
+        <!-- Backend -->
+        <dependency>
+            <groupId>com.dnhsscioly</groupId>
+            <artifactId>backend</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
