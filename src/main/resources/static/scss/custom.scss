@@ -43,14 +43,15 @@ $theme-colors: (
 
 // redefine colors
 $primary: #a1a9bd;
-$secondary: #5B9D82;
+$secondary: #5b9d82;
 $body-bg: #cfd8dc;
 
 // redefine body background
 @import "../../../../../node_modules/bootstrap/scss/bootstrap";
 
 // setup default background
-html, body {
+html,
+body {
   background-image: var(--bs-gradient);
   background-color: var(--bs-body-bg);
 }
@@ -67,8 +68,8 @@ html, body {
   --#{$variable-prefix}body-bg: #{$body-bg};
 
   $theme-colors: (
-          "primary": $primary,
-          "secondary": $secondary
+    "primary": $primary,
+    "secondary": $secondary,
   );
   /* redefine theme color variables */
   @each $color, $value in $theme-colors {
@@ -82,4 +83,3 @@ html, body {
 
   @import "../../../../../node_modules/bootstrap/scss/bootstrap";
 }
-
