@@ -1,8 +1,9 @@
 <!-- This page is illustrative and contains ideas about HTML formatting -->
 <!DOCTYPE HTML>
 <!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
-<html lang="en">
-
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/base}" lang="en">
+    
 <th:block layout:fragment="body" th:remove="tag">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <head>
@@ -67,12 +68,12 @@
         <!-- Navbar lists -->
         <div class="sidenav"> 
           <img src="https://i.ibb.co/0hLyqc7/scioly.png">
-          <a href="#">About</a>
-          <a href="#">Calendar</a>
-          <a href="#">Events</a>
-          <a href="#">Contact</a>
-          <a href="#">Signup</a>
-          <a href="#" style="margin-top: 25%">Login</a>
+          <a th:href="@{/}">About</a>
+          <a th:href="@{/}">Calendar</a>
+          <a th:href="@{/roster}">Events</a>
+          <a th:href="@{/dne}">Contact</a>
+          <a th:href="@{/birds}">Signup</a>
+          <a th:href="@{/}" style="margin-top: 25%">Login</a>
         </div>
         
         <!-- Beginning of main body -->
