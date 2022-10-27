@@ -1,8 +1,9 @@
 <!-- This page is illustrative and contains ideas about HTML formatting -->
 <!DOCTYPE HTML>
 <!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
-<html lang="en">
-
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/base}" lang="en">
+      
 <th:block layout:fragment="body" th:remove="tag">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <head>
@@ -12,68 +13,13 @@
           font-family: "Lato", sans-serif;
         }
         
-        /* Actual block of navbar */
-        .sidenav {
-          height: 100%;
-          width: 200px;
-          position: fixed;
-          z-index: 1;
-          top: 0;
-          left: 0;
-          background-color: rgb(56, 121, 219);
-          overflow-x: hidden;
-          padding-top: 20px;
-        }
-        
-        /* Navbar Links/Items */
-        .sidenav a {
-          padding: 6px 6px 6px 32px;
-          text-decoration: none;
-          font-size: 25px;
-          color: #ffffff;
-          display: block;
-        }
-        
-        /* Hover options for links */
-        .sidenav a:hover {
-          color: #aaaab1;
-        }
-        
         /* Margin for styling according to nav */
         .main {
           margin-left: 200px; /* Same as the width of the sidenav */
         }
         
-        /* styling according to screen */
-        @media screen and (max-height: 450px) {
-          .sidenav {padding-top: 15px;}
-          .sidenav a {font-size: 18px;}
-        }
-        
-        /* Logo Styling mainly */
-        img{
-            margin-left:10px;
-        }
-
-        /* Styling for the images in slides */
-        .mySlides {
-            display:none;
-            margin-left:5%;
-        }
         </style>
         </head>
-        <body>
-        
-        <!-- Navbar lists -->
-        <div class="sidenav"> 
-          <img src="https://i.ibb.co/0hLyqc7/scioly.png">
-          <a th:href="@{/}">About</a>
-          <a th:href="@{/}">Calendar</a>
-          <a th:href="@{/roster}">Events</a>
-          <a th:href="@{/birds}">Contact</a>
-          <a th:href="@{/dne}">Signup</a>
-          <a hth:href="@{/}" style="margin-top: 25%">Login</a>
-        </div>
         
         <!-- Beginning of main body -->
         <div class="main">
@@ -82,39 +28,5 @@
           <h4>Registration for 2022-2023 season is OPEN!! Classes will be held both online and in person, depending on your coach's preference.</3>
           <br>
         </div>
-
-        <!-- Slideshow -->
-        <div class="w3-content w3-display-container" style = "margin-left: 20%">
-            <a href='https://postimages.org/' target='_blank'><img class="mySlides" src='https://i.postimg.cc/TY3nFwhq/Screen-Shot-2022-10-23-at-11-20-35-PM.png' border='0' alt='Screen-Shot-2022-10-23-at-11-20-35-PM'/></a>
-            <a href='https://postimages.org/' target='_blank'><img class="mySlides" src='https://i.postimg.cc/9MHGnYqr/Screen-Shot-2022-10-23-at-11-20-30-PM.png' border='0' alt='Screen-Shot-2022-10-23-at-11-20-30-PM'/></a>
-            <img class="mySlides" src="https://www.spsnational.org/sites/default/files/images/publications/observer/2021/Fall/Interactions_Olympiad3-web.jpg" style="width:90%; height: 70%;">
-          
-            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-        </div>
-          
-        <!-- Slideshow code -->
-        <script>
-          var slideIndex = 1;
-          showDivs(slideIndex);
-          
-          function plusDivs(n) {
-            showDivs(slideIndex += n);
-          }
-          
-          function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-              x[i].style.display = "none";  
-            }
-            x[slideIndex-1].style.display = "block";  
-          }
-        </script>
-        </body>
 </th:block>
-</body>
-
 </html>
