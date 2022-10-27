@@ -172,4 +172,65 @@
             </script>
         </div>
     </nav>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      /* Actual block of navbar */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(56, 121, 219);
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      
+      /* Navbar Links/Items */
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+      }
+      
+      /* Hover options for links */
+      .sidenav a:hover {
+        color: #aaaab1;
+      }
+      
+      /* Margin for styling according to nav */
+      .main {
+        margin-left: 210px; /* Same as the width of the sidenav */
+      }
+      
+      /* styling according to screen */
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+      
+      /* Logo Styling mainly */
+      img{
+          margin-left:10px;
+      }
+      
+      </style>
+      </head>
+      <!-- Navbar lists -->
+      <div class="sidenav"> 
+        <img src="https://i.ibb.co/0hLyqc7/scioly.png">
+        <a th:href="@{/}">About</a>
+        <a th:href="@{/}">Calendar</a>
+        <a th:href="@{/roster}">Roster</a>
+        <a th:href="@{/birds}">Contact</a>
+        <a th:href="@{/dne}">Signup</a>
+        <a hth:href="@{/}" style="margin-top: 25%">Login</a>
+      </div>
+</div>
 </th:block>
